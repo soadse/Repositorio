@@ -1,0 +1,466 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.jacquard-12-regular {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}  
+/*
+    Tipos de format()
+    - opentype (otf)
+    - truetype (ttf)
+    - embedded-opentype
+    - truetype-att (Apple Advanced Typography)
+    - svg
+*/
+@font-face {
+    font-family: 'robo';
+    src: url(../fontes/minecraft/Minecraft.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --cor01: #054f77;
+    --cor02: #EE9D91;
+    --cor03: #AF7351;
+    --cor04: #E9BA84;
+    --cor05: #B38264;
+    --cor06: #94684F;
+    --cor07: #32292A;
+    --cor08: #28221C;
+    --cor09: #C5B19F;
+    --font01: "Jacquard 12", system-ui;
+    --font02: "robo";
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+* > h1 {
+    font-family: var(--font02);
+    font-size: 2.5em;
+    letter-spacing: 10px;
+    color: white;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+}
+
+
+
+nav {
+    background-color: rgba(255, 255, 255, 0.219);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.521);
+    z-index: 1000;
+}
+nav > .imagens {
+    margin-right: 100px;
+}
+nav > .imagens > img{
+    width: 30px;
+    margin-right: 20px;
+}
+nav > a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--cor07);
+}
+nav > a:hover {
+    text-shadow: -10px -5px 5px rgba(0, 0, 0, 0.479);
+    font-size: 2em;
+    transition: all .2s;
+    color: var(--cor03);
+}
+nav > a:not(:hover) {
+    transition: all .5s;
+}
+
+
+
+.pag01 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(45deg, var(--cor03) 50%, var(--cor04) 50% );
+}
+.pag01 > .apresentacao01 > .apresentacao02 {
+    color: var(--cor04);
+}
+.pag01 > .apresentacao01 > .apresentacao02 > #meuNome {
+    width: 100%;
+    animation: digitando 3s steps(25), blink .4s infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    padding-right: 5px;
+}
+@keyframes digitando {
+    from {
+        width: 0;
+    }
+}
+@keyframes blink {
+    60%{
+        border-color: transparent;
+    }
+}
+
+.pag01 > .apresentacao01 > button {
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 10px;
+    background-color: var(--cor04);
+    border: none;
+}
+.pag01 > .apresentacao01 > button:hover {
+    box-shadow: 0px 0px 10px black;
+    animation: focoBTN .3s forwards linear;
+}
+@keyframes focoBTN {
+    0% {
+        background-image: linear-gradient(20deg,var(--cor04) 0%, white 10%, var(--cor04) 90%);
+        
+    }
+    10% {
+        background-image: linear-gradient(20deg,var(--cor04) 10%, white 20%, var(--cor04) 80%);
+    }
+    20% {
+        background-image: linear-gradient(20deg,var(--cor04) 20%, white 30%, var(--cor04) 70%);
+    }
+    30% {
+        background-image: linear-gradient(20deg,var(--cor04) 30%, white 40%, var(--cor04) 60%);
+    }
+    40% {
+        background-image: linear-gradient(20deg,var(--cor04) 40%, white 50%, var(--cor04) 50%);
+    }
+    50% {
+        background-image: linear-gradient(20deg,var(--cor04) 50%, white 60%, var(--cor04) 40%);
+    }
+    60% {
+        background-image: linear-gradient(20deg,var(--cor04) 60%, white 70%, var(--cor04) 30%);
+    }
+    70% {
+        background-image: linear-gradient(20deg,var(--cor04) 70%, white 80%, var(--cor04) 20%);
+    }
+    80% {
+        background-image: linear-gradient(20deg,var(--cor04) 80%, white 90%, var(--cor04) 10%);
+    }
+    90% {
+        background-image: linear-gradient(20deg,var(--cor04) 90%, white 100%);
+    }
+    100% {
+        background-image: linear-gradient(20deg,var(--cor04) 100%, white 0%);
+    }
+}
+.pag01 > .apresentacao01 > button:not(:hover){
+    transition: all .5s;
+}
+.pag01 > .apresentacao01 > button > a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: var(--cor03);
+}
+.pag01 > img {
+    animation: move02 2s forwards, cabeca 2s linear  infinite;
+}
+@keyframes move02 {
+    0% {
+        position: relative;
+        left: 100%;
+        filter: drop-shadow(0px 0px 0px black);
+    }
+    50% {
+        position: relative;
+        left: 50%;
+        filter: drop-shadow(0px 0px 0px black);
+    }
+    100% {
+        position: relative;
+        left: 0%;
+        filter: drop-shadow(10px 10px 5px black);
+    } 
+}
+@keyframes cabeca {
+    0% {
+        position: relative;
+        top: 0%;
+    }
+    50% {
+        position: relative;
+        top: 2%; 
+    }
+    100% {
+        position: relative;
+        top: 0%;
+    }
+}
+
+
+
+.pag02  {
+    background-color: var(--cor06);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.pag02 > .conterLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pag02 > .conterLogo > .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+}
+.pag02 > .conterLogo > .logo > #html5 {
+    animation: html 5s infinite linear;
+}
+@keyframes html {
+    0% {
+        position: relative;
+        left: 0%;
+        z-index: 1000;
+    }
+    50% {
+        position: relative;
+        left: 44%;
+        z-index: 1000;  
+    }
+    100% {
+        position: relative;
+        left: 0%;
+    }
+}
+.pag02 > .conterLogo > .logo > #css3 {
+    animation: css 5s infinite linear;
+}
+@keyframes css {
+    0% {
+        position: relative;
+        right: 0%;
+    }
+    25% {
+        position: relative;
+        right: 22%;
+    }
+    50% {
+        position: relative;
+        right: 0%;
+        z-index: 1000;
+    }
+    75% {
+        position: relative;
+        right: -22%;
+    }
+    100% {
+        position: relative;
+        right: 0%;  
+    }
+}
+.pag02 > .conterLogo > .logo > #js {
+    animation: js 5s infinite linear;
+}
+@keyframes js {
+    0% {
+        position: relative;
+        right: 0%;
+    }
+    50% {
+        position: relative;
+        right: 44%;
+    }
+    100% {
+        position: relative;
+        right: 0%;
+        z-index: 1000;
+    }
+}
+.pag02 > .conterLogo > .logo > img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.pag02 > .conterLogo > .sombra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+}
+.pag02 > .conterLogo > .sombra > p {
+    width: 80px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.137);
+    
+}
+.pag02 > .conterLogo > .sombra > #sombraHTML {
+    animation: html 5s infinite linear;
+}
+.pag02 > .conterLogo > .sombra > #sombraCSS {
+    animation: css 5s infinite linear;
+}
+.pag02 > .conterLogo > .sombra > #sombraJS {
+    animation: js 5s infinite linear;
+}
+.pag02 > .sobreMim {
+    color: white;
+}
+.pag02 > div {
+    width: 500px;
+}
+.pag02 > div h1 {
+    margin-bottom: 10px;
+}
+.pag02 > div  p {
+    text-indent: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    line-height: 22px;
+}
+
+
+
+.pag03 {
+    background-color: var(--cor06);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pag03 > h1 {
+    position: relative;
+    top: -5%;
+}
+.pag03 > .projetos {
+    display: flex;
+}
+.pag03 > .projetos > a > img {
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.pag03 > .projetos > a > img:hover {
+    box-shadow: 10px 10px 10px black;
+    transition: all .5s;
+}
+.pag03 > .projetos > a > img:not(:hover){
+    transition: all .5s;
+}
+.pag03 > #repositorio {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+
+
+.pag04 {
+    background-color: var(--cor06);
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pag04 > h1 {
+    position: relative;
+    top: -5%;
+}
+.pag04 > .conterHabilidades {
+    display: flex;
+    margin-top: 20px;
+}
+.pag04 > .conterHabilidades > .habilidades {
+    width: 370px;
+}
+.pag04 > .conterHabilidades > .habilidades > img {
+    width: 100px;
+    margin: 10px;
+    filter: grayscale(100%);
+}
+.pag04 > .conterHabilidades > .habilidades > img:hover {
+    filter: grayscale(0%);
+    transition: all .5s;
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.pag04 > .conterHabilidades > .resultado {
+    width: 600px;
+    
+}
+.pag04 > .conterHabilidades > .resultado > #passe {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    animation: mostrar 1.5s forwards;
+    color: white;
+}
+@keyframes mostrar {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.pag04 > .conterHabilidades > .resultado > .textos {
+    width: 100%px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-indent: 2em;
+    color: white;
+    font-weight: bolder;
+}
+footer {
+    background-color: var(--cor08);
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer > p {
+    color: white;
+}
+footer > p > a {
+    color: var(--cor09);
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer > p > a:hover {
+    color: var(--cor04);
+}
